@@ -1,0 +1,33 @@
+<!-- category.component.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categories</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let category of categories">
+    <ion-item lines="none">
+      <ion-label>{{ category.title }}</ion-label>
+      <ion-button fill="clear" slot="end">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-scroll scroll-x="true" class="horizontal-scroll">
+      <div class="category-items">
+        <div *ngFor="let item of category.items" class="item-card">
+          <img [src]="item.image" alt="{{ item.name }}" />
+          <p>{{ item.name }}</p>
+        </div>
+      </div>
+    </ion-scroll>
+  </div>
+</ion-content>

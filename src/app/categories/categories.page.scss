@@ -1,0 +1,25 @@
+ion-card {
+    text-align: center;
+    color:black;
+    border-radius: 12px;
+    background-color: bisque;
+
+
+  
+    ion-card-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      
+  
+      img {
+        max-width: 100%;
+        max-height: 150px;
+        height: auto;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+    }
+  }
+  
