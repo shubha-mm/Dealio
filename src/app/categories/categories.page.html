@@ -1,33 +1,23 @@
-<!-- category.component.html -->
 <ion-header>
   <ion-toolbar>
     <ion-title>Categories</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let category of categories">
-    <ion-item lines="none">
-      <ion-label>{{ category.title }}</ion-label>
-      <ion-button fill="clear" slot="end">
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-scroll scroll-x="true" class="horizontal-scroll">
-      <div class="category-items">
-        <div *ngFor="let item of category.items" class="item-card">
-          <img [src]="item.image" alt="{{ item.name }}" />
-          <p>{{ item.name }}</p>
-        </div>
-      </div>
-    </ion-scroll>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <!-- Example Category Card -->
+      <ion-col size="6" size-md="4" *ngFor="let category of categories">
+        <ion-card (click)="navigateToCategory(category.route)">
+          <ion-card-header>
+            <ion-card-title>{{ category.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <img [src]="category.image" alt="{{ category.name }}" />
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
