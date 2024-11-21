@@ -4,10 +4,7 @@ import { HomePage } from './home.page';
 import { SplashPage } from '../splash/splash.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomePage,
-  },
+
   {
     path: 'splash',
     loadChildren: () => import('../splash/splash.module').then( m => m.SplashPageModule)
